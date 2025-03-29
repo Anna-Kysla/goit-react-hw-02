@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.reset {
+  background-color: #f44336;
+  color: white;
+}
