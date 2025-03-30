@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import Feedback from "./components/Feedback/Feedback";
-import Options from "./components/Options/Options";
 import Description from "./components/Description/Description";
+import Options from "./components/Options/Options";
+import Feedback from "./components/Feedback/Feedback";
+import Notification from "./components/Notification/Notification";
 
 const LOCAL_STORAGE_KEY = "feedback-data";
 
@@ -30,8 +31,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Sip Happens Café</h1>
-      <Description text="Please leave your feedback about our service by selecting one of the options below." />
+      <Description />
       <Options
         options={["good", "neutral", "bad"]}
         onLeaveFeedback={updateFeedback}
@@ -47,7 +47,7 @@ export default function App() {
           positivePercentage={positivePercentage}
         />
       ) : (
-        <p>No feedback yet</p>
+        <Notification message="No feedback yet" />
       )}
     </div>
   );
